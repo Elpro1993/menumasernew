@@ -214,11 +214,12 @@
             transform: translateY(-5px);
         }
 
-        .item-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+.item-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #f0f0f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23e5e5e5"/></svg>') center/cover;
+}
 
         .item-content {
             padding: 1rem 0 1rem 0; /* Removed left/right padding */
@@ -489,7 +490,7 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img alt="Restaurant Logo" class="logo"> <!-- Consider adding a placeholder logo.png -->
+<img alt="Restaurant Logo" class="logo" loading="lazy" width="60" height="60"> <!-- Consider adding a placeholder logo.png -->
             <h1 class="restaurant-name">Fine Dining Restaurant</h1>
         </div>
         <div class="restaurant-info">
@@ -512,9 +513,9 @@
     </nav>
 
     <main class="menu-container">
-        <div class="menu-grid">
-            <!-- Menu items populated by JS -->
-        </div>
+<div class="menu-grid" role="list">
+    <!-- Menu items populated by JS -->
+</div>
     </main>
 
     <!-- Load Supabase library FIRST -->

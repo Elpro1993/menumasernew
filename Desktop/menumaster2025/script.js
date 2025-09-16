@@ -201,7 +201,14 @@ if (typeof supabase === 'undefined' || !supabase.createClient) {
         } else {
             // Render display fields (original logic)
             card.innerHTML = `
-                <img src="${imageUrl}" alt="${item.name}" class="item-image" onerror="this.onerror=null;this.src='placeholder.png';">
+<img src="${imageUrl}?width=300&height=180&quality=80&format=webp" 
+     srcset="${imageUrl}?width=600&quality=80&format=webp 2x"
+     alt="${item.name}" 
+     class="item-image" 
+     loading="lazy" 
+     width="300" 
+     height="180"
+     onerror="this.onerror=null;this.src='placeholder.png';">
                 <div class="item-content">
                     <h3 class="item-name">${item.name || 'Unnamed Item'}</h3>
                     <div class="item-header">
